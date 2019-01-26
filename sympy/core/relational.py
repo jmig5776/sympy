@@ -523,8 +523,8 @@ class Unequality(Relational):
         eq = Equality(*self.args)._eval_simplify(
             ratio, measure, rational, inverse)
         if isinstance(eq, Equality):
-            eq = self.func(*eq.args)
-        return eq
+            return self.func(*eq.args)
+        return not eq
 
 Ne = Unequality
 
